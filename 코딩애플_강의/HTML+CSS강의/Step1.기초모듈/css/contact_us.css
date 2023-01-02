@@ -1,0 +1,44 @@
+input, textarea {
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+    height: 150px;
+}
+
+.form-input {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.form-background {
+    background-color: rgb(70, 70, 70);
+    padding: 30px;
+}
+
+.form-background h3{
+    margin-bottom: 20px;
+}
+
+.form-white {
+    background-color: white;
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.w-50 {
+    width: 50%;
+    float: left;
+    padding: 10px;
+}
+
+.yellow-button {
+    background-color: rgb(244, 244, 179);
+    border: 1px solid yellow;
+}
