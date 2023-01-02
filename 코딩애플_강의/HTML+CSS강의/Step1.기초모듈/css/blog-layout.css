@@ -1,0 +1,79 @@
+.container {
+    width: 800px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+}
+
+.left-content {
+    width: 70%;
+    float: left;
+}
+
+.title-part {
+    font-size: 30px;
+    float: left;
+}
+
+.title-part h3{
+    margin: 10px 3px 5px;
+    font-size: 20px;
+}
+
+.title-part p{
+    margin: 3px;
+    font-size: 15px;
+}
+
+.content-part {
+    border-top: 1px solid black;
+}
+
+.content-part h3 {
+    font-size: 20px;
+    margin: 6px;
+}
+
+.content-part p {
+    font-size: 16px;
+    margin: 4px;
+}
+
+.right-image {
+    width: 29%;
+    float: left;
+    line-height: 200px;
+    border-left: 1px solid black;
+}
+
+.profile {
+    width: 60px;
+    display: block;
+    float: left;
+    margin: 4px;
+}
+
+.blog-img {
+    width: 95%;
+    vertical-align: middle;
+    margin-left: 4%;
+}
+
+.navbar li {
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+    background: #eee;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.navbar li a{
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.navbar li a:visited{
+    color: black;
+}
