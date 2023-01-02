@@ -1,0 +1,28 @@
+.background {
+    width: 100%;
+    background-color: #c2d3de;
+    padding: 30px;
+}
+
+.background button {
+    padding: 15px;
+    border-radius: 5px;
+    background-color: darkgoldenrod;
+    border: 1px solid rgb(155, 107, 22);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.background button:hover {
+    background-color: chocolate;
+}
+
+.background button:focus {
+    background-color: brown;
+}
+
+.background button:active {
+    background-color: blue;
+    border: 400% solid black;
+}
