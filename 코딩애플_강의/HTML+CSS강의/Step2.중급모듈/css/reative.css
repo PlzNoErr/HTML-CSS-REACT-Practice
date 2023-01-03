@@ -1,0 +1,103 @@
+.main-background {
+  width: 100%;
+  height: 350px;
+  background-image: url(../배경사진.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(90%) saturate(110%);
+  padding: 1px;
+  text-align: center;
+}
+
+.main-title {
+  color: white;
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.main-background p {
+  color: white;
+  line-height: 10px;
+}
+
+.main-background button {
+  color: black;
+  font-size: 19px;
+  font-family: fantasy;
+  border: none;
+  border-radius: 2px;
+  background-color: white;
+  cursor: pointer;
+  padding: 10px;
+
+  position: absolute;
+  top: 65%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 160px;
+}
+
+.sub-box {
+  background-color: rgb(244, 244, 244);
+  color: black;
+  text-align: center;
+
+  position: relative;
+  top: -40px;
+  margin: auto;
+  width: 35%;
+  padding: 10px;
+
+  min-width: 500px;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.sub-box p {
+  font-size: 14px;
+  color: black;
+}
+
+.navbar {
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.nav-item {
+  margin-right: 30px;
+  font-size: 20px;
+}
+
+/* 반응형을 위한 미디어 쿼리 문법 */
+
+/* 1200 이하에는 해당 css 적용 */
+/* 여기 사이즈 부터는 테블릿 */
+@media screen and (max-width: 1200px) {
+  .main-title {
+    font-size: 30px;
+  }
+  .nav-item {
+    font-size: 12px;
+  }
+  /* 클래스 몇게가 들어가든 상관 X */
+}
+
+/* 스타일이 겹치면 아래부터 적용하기 때문에
+   더 작은 max-width를 아래로 배치하자 */
+/* 여기 사이즈 부터는 모바일 */
+@media screen and (max-width: 768px) {
+  .main-title {
+    font-size: 18px;
+  }
+  .nav-item {
+    font-size: 9px;
+  }
+  /* 클래스 몇게가 들어가든 상관 X */
+}
