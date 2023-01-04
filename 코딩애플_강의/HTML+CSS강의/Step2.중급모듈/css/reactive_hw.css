@@ -1,14 +1,14 @@
 .container {
   display: flex;
-  height: 150px;
-  padding: 15px;
+  padding: 5px;
   margin: auto;
   justify-content: space-around;
 }
 
 .active-box {
+  height: 80px;
   width: 200px;
-  margin: 10px;
+  margin: 5px;
   display: flex;
   background-color: aqua;
   flex-direction: column;
