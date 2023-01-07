@@ -28,7 +28,7 @@ h4 {
 .main-iphone {
   width: 400px;
   float: right;
-  margin-top: 95px;
+  margin-top: 94px;
 }
 
 .btn {
@@ -43,10 +43,6 @@ h4 {
 .btn-black {
   background: #444;
   color: white;
-}
-.btn-black:hover {
-}
-.btn-black:active {
 }
 
 /*큰 레이아웃*/
@@ -87,8 +83,21 @@ h4 {
   float: left;
   width: 50%;
   height: 350px;
+  position: relative;
   background-image: url(../portfolio-1.jpg);
   background-size: cover;
+}
+
+.poitem2 {
+  background-image: url(../portfolio-2.jpg);
+}
+
+.poitem3 {
+  background-image: url(../portfolio-3.jpg);
+}
+
+.poitem4 {
+  background-image: url(../portfolio-4.jpg);
 }
 
 .portfolio-container {
@@ -120,7 +129,7 @@ h4 {
     display: block;
     float: none;
     margin: auto;
-    margin-top: 42px;
+    margin-top: 49px;
   }
   .main-text {
     float: none;
@@ -137,9 +146,12 @@ h4 {
   .service-items div {
     width: 100%;
   }
-}
-
-@media screen and (max-width: 992px) {
+  .exex {
+    margin-top: 40px;
+  }
+  .exex h5 {
+    margin-top: 10px;
+  }
   .portfolio-item1 {
     float: none;
     width: 100%;
