@@ -15,7 +15,6 @@ function App() {
   let [좋아요, 좋아요변경함수] = useState([0, 0, 0]);
   let [modal, setModal] = useState(false);
   let [입력값, 입력값변경] = useState("");
-
   return (
     <div className="App">
       <div className="black-nav">
@@ -26,7 +25,7 @@ function App() {
           onClick={() => {
             // 깊은 복사
             let copy = [...데이터1];
-            copy[0] = "바뀐다!";
+            copy[0] = "바뀐다@@";
             데이터변경함수(copy);
           }}
         >
@@ -161,7 +160,7 @@ function Modal(props) {
     <>
       <div className="modal" style={{ background: props.color }}>
         {/* 자식이 부모의 데이터를 활용하는 방법!!! */}
-        {/* 패륜, 불륜, 근친 전송 금지임. 무조건 부모가 주는 것만 가능 */}
+        {/* 패륜, 근친 전송 금지임. 무조건 부모가 주는 것만 가능 */}
         <h4>{props.부모데이터}</h4>
         <p>날짜</p>
         <p>상세내용</p>
