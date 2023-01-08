@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+}
+
+.main-bg {
+  height: 300px;
+  background-image: url(../public/배경사진.jpg);
+  background-position: center;
+  background-size: cover;
+}
