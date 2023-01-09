@@ -1,4 +1,4 @@
-export default function sho(props) {
+export default function Sho(props) {
   let idx =
     "https://codingapple1.github.io/shop/shoes" +
     (props.shoData.id + 1) +
