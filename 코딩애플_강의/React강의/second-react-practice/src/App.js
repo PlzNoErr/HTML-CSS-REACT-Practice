@@ -1,9 +1,9 @@
-import "./App.css";
+import "./App.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { useState } from "react";
 import data from "./data";
-import Shooo from "./components/sho";
+import Shooo from "./components/Sho";
 import Sho2 from "./components/sho2";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 
@@ -64,7 +64,7 @@ function App() {
               onClick={() => {
                 navigate(1);
               }}
-              style={{ color: "white" }}
+              className="head"
               href="#features"
             >
               앞으로가기
