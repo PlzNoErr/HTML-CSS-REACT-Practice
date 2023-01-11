@@ -23,9 +23,8 @@ export default function Sho(props) {
   return (
     <div className="col-md-4">
       <img src={idx} width="80%" alt="" />
-      <h4 className={sty.head}>{props.shoData.title}</h4>
+      <h4 className={sty.head + " " + sty.mind}>{props.shoData.title}</h4>
       <YellowBtn color="yellow">버튼</YellowBtn>
-      <newBtn color="red">버튼2</newBtn>
       <p>{props.shoData.content}</p>
       <p>{props.shoData.price}원</p>
     </div>

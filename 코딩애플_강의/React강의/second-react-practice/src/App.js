@@ -1,15 +1,29 @@
-import "./App.module.css";
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { useState } from "react";
-import data from "./data";
+import { useEffect, useState } from "react";
 import Shooo from "./components/Sho";
 import Sho2 from "./components/sho2";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
+import axios from "axios";
+import data from "./data";
 
 function App() {
-  let [shoes] = useState(data);
+  let [shoes, setShose] = useState([]);
   let navigate = useNavigate();
+
+  useEffect(() => {
+    axios
+      .get("https://codingapple1.github.io/shop/data2.json")
+      .then((res) => {
+        console.log(res);
+        let copy = [...data, ...res.data];
+        setShose(copy);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
 
   return (
     <div className="App">
@@ -75,11 +89,11 @@ function App() {
           </Nav>
         </Container>
       </Navbar>
-      <div className="main-bg"></div>
+      <div className="mainBg"></div>
       <h2>상품 목록</h2>
       <div className="container">
         <div className="row">
-          {shoes.map(function (sho) {
+          {shoes.map((sho) => {
             return <Shooo shoData={sho} key={sho.id}></Shooo>;
           })}
         </div>
