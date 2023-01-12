@@ -7,10 +7,18 @@ import Sho2 from "./components/sho2";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import axios from "axios";
 import data from "./data";
+import { useDispatch, useSelector } from "react-redux";
+import { set변수1, set변수2, set변수3 } from "./test.store";
 
 function App() {
   let [shoes, setShose] = useState([]);
   let navigate = useNavigate();
+
+  // 여기서 state는 등록된 모든 state를 의미한다.
+  // "state.특정변수"로 필요한 변수 한개만 딱 정해서 빼오는 것도 가능하다
+  // 변수명 선언은 편한대로 하면 된다.
+  let state = useSelector((state) => state);
+  let dispatch = useDispatch();
 
   useEffect(() => {
     axios
@@ -29,7 +37,19 @@ function App() {
     <div className="App">
       {/*  */}
       <Routes>
-        <Route path="/" element={<div>이건 메인 페이지다</div>} />
+        <Route
+          path="/"
+          element={
+            <div
+              onClick={() => {
+                dispatch(set변수2("진짜 여기 적은대로 바뀌냐?"));
+                dispatch(set변수3());
+              }}
+            >
+              {state.변수1.v1} + {state.변수2}
+            </div>
+          }
+        />
         <Route path="/detail" element={<div>보여준다?</div>} />
         <Route
           path="/detail/:num/:nu"
@@ -93,8 +113,8 @@ function App() {
       <h2>상품 목록</h2>
       <div className="container">
         <div className="row">
-          {shoes.map((sho) => {
-            return <Shooo shoData={sho} key={sho.id}></Shooo>;
+          {shoes.map((sho, i) => {
+            return <Shooo shoData={sho} key={i}></Shooo>;
           })}
         </div>
       </div>
