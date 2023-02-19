@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="hello">안녕</p>
+    <button id="button">누르면 파라미터 됨</button>
+  </body>
+  <script>
+    let name = "kim";
+    let age = 20;
+    let arr = [1, 2, 3, 4, 5];
+    let obj = { name: name, age: age, arr: arr[2] };
+    console.log(obj);
+
+    function 작명(parameter) {
+      document.getElementById("hello").innerHTML = parameter;
+    }
+
+    document.getElementById("button").addEventListener("click", () => {
+      작명("멍청이");
+      if (document.getElementById("hello").innerHTML == "멍청이") {
+        console.log("바뀜");
+      }
+    });
+
+    arr.forEach((element) => {
+      console.log(element);
+    });
+  </script>
+</html>
