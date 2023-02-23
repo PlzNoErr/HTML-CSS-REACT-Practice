@@ -1,0 +1,28 @@
+<button id="버튼">눌러를 출력해라</button>
+<script>
+  let 사람 = {
+    name: "손흥민",
+    sayHi: function () {
+      console.log("안녕 나는 " + this.name);
+    },
+  };
+  console.log("문제1번");
+  사람.sayHi();
+  //
+  let 자료 = { data: [1, 2, 3, 4, 5] };
+  function 모두더하기(arr) {
+    let sumAll = 0;
+    arr.forEach((element) => {
+      sumAll += element;
+    });
+    console.log(sumAll);
+  }
+  console.log("문제2번");
+  모두더하기(자료.data);
+  //
+  document.getElementById("버튼").addEventListener("click", function () {
+    setTimeout(() => {
+      console.log(this.innerHTML);
+    }, 1000);
+  });
+</script>
