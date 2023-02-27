@@ -22,3 +22,14 @@ let 학교: School = {
   teacher: "Phil",
   friend: "John",
 };
+
+function work(a: number): number {
+  return a + 1;
+}
+
+// void를 사용가능하다
+function work2(a: number): void {}
+
+// 파라미터가 들어 올 수도 있고 아닐수도 있고
+// => ? :number는 :number | undefined와 같은 뜻이다
+function work3(a?: number): void {}
