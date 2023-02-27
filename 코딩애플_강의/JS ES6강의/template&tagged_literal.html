@@ -1,0 +1,14 @@
+<script>
+  let pants = 0;
+  let socks = 100;
+  `바지${pants} 양말${socks}`;
+
+  // `양말20 바지100` 이 나오도록 만들자
+
+  function changeString(arr, el1, el2) {
+    if (el1 === 0) console.log("바지 다팔렸어요 " + arr[1] + el2);
+    else console.log(`${arr[1]}${el1} ${arr[0]}${el2}`);
+  }
+
+  changeString`바지${pants} 양말${socks}`;
+</script>
