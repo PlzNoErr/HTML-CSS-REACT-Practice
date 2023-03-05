@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img id="test" src="https://codingapple1.github.io/kona.jpg" />
+  </body>
+
+  <script>
+    // Q1. <img> 이미지 로딩 성공시 특정 코드를 실행하고 싶습니다.
+
+    // 아래 이미지가 로드가 되면 콘솔창에 성공, 로드가 실패하면 콘솔창에 실패를 출력하고 싶은데
+
+    // Promise 문법의 then, catch 함수를 사용해 만들고 싶습니다. 어떻게 코드를 짜면 될까요?
+
+    // (참고) 이미지 로딩이 끝났다는 것은 <img>에 load라는 이벤트리스너를 붙여서 체크가 가능합니다.
+
+    // (참고) 이미지 로딩이 실패했다는 것은 <img>에 error라는 이벤트리스너를 붙여서 체크가 가능합니다.
+
+    let img = document.querySelector("#test");
+
+    let 프로미스test = new Promise((resolve, reject) => {
+      img.addEventListener("load", function () {
+        console.log("로딩 성공");
+        resolve();
+      });
+      img.addEventListener("error", function () {
+        console.log("로딩 실패");
+        reject();
+      });
+    });
+
+    프로미스test
+      .then(() => {
+        console.log("then으로 넘어옴!!");
+      })
+      .catch(() => {
+        console.log("catch로 넘어옴!!");
+      });
+
+    var 프로미스 = new Promise(function (성공, 실패) {
+      fetch("https://codingapple1.github.io/hello.txt").then(function (결과) {
+        성공(결과);
+      });
+    });
+
+    프로미스
+      .then(function (결과) {
+        console.log(결과);
+      })
+      .then(() => {
+        fetch("https://codingapple1.github.io/hello2.txt").then((res) => {
+          console.log(res);
+        });
+      });
+  </script>
+</html>
