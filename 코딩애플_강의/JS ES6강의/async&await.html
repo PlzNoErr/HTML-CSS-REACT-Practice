@@ -1,0 +1,15 @@
+<button id="버튼">버튼</button>
+<script>
+  async function test() {
+    let buttonPro = new Promise((resolve, reject) => {
+      document.querySelector("#버튼").addEventListener("click", () => {
+        resolve("성공 메세지");
+      });
+    });
+
+    console.log("나는 먼저 실행되지롱~");
+    console.log(await buttonPro);
+    console.log("await가 해결 될 때까지 실행 안됨");
+  }
+  test();
+</script>
