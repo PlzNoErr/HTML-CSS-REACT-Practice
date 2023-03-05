@@ -51,11 +51,17 @@
     프로미스
       .then(function (결과) {
         console.log(결과);
-      })
-      .then(() => {
-        fetch("https://codingapple1.github.io/hello2.txt").then((res) => {
-          console.log(res);
+        var 프로미스2 = new Promise(function (성공, 실패) {
+          fetch("https://codingapple1.github.io/hello2.txt").then(function (
+            결과
+          ) {
+            성공(결과);
+          });
         });
+        return 프로미스2;
+      })
+      .then((res) => {
+        console.log(res);
       });
   </script>
 </html>
