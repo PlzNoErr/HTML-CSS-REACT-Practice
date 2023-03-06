@@ -1,0 +1,84 @@
+<script>
+  // 이것이 생성자이다... 특이하게 객체지향 한다.
+
+  function Cons() {
+    this.name = "Kim";
+    this.age = 13;
+  }
+
+  // 새로운 객체 생성 완료!
+  let 객채 = new Cons();
+
+  // 문제를 풀어보자
+  function MakeProduct(name, price) {
+    this.name = name;
+    this.price = price;
+    this.taxCal = () => console.log(this.price / 10);
+  }
+
+  let product1 = new MakeProduct("banana", 3000);
+  let product2 = new MakeProduct("apple", 6000);
+
+  product1.taxCal();
+  product2.taxCal();
+
+  //문제 1
+  function User(name, age) {
+    this.name = name;
+    this.age = age;
+    this.sayHi = function () {
+      console.log("안녕! 나는 " + this.name + "이야");
+    };
+  }
+
+  let user1 = new User("kim1", 12);
+  let user2 = new User("kim2", 12);
+  let user3 = new User("kim3", 12);
+
+  user1.sayHi();
+  user2.sayHi();
+  user3.sayHi();
+
+  //문제 2, 다음코드의 출력 결과는?
+  function Parent() {
+    this.name = "Kim";
+  }
+  var a = new Parent();
+
+  a.__proto__.name = "Park";
+  console.log(a.name);
+
+  //정답 "Kim", Why? 이미 자손에서 state가 동일한 이름으로 override함.
+
+  //문제 3
+  function Student(이름, 나이) {
+    this.name = 이름;
+    this.age = 나이;
+  }
+
+  Student.prototype.sayHi = () => {
+    console.log("안녕 나는 " + this.name + "이야");
+  };
+  var 학생1 = new Student("Kim", 20);
+
+  학생1.sayHi(); //왜 이 코드가 제대로 안나오죠?
+
+  // arrow function으로 정의되었기 때문임.
+  // sayHi안에서 this.name은 window.name을 가르킴.
+  // function으로 선언하면 의도대로 작동한다.
+
+  // 문제 4
+  // 모든 Array 함수에 정의되게 하려면 어떻게?
+  Array.prototype.removeWant = function (num) {
+    for (let i = 0; i < this.length; i++) {
+      if (this[i] === num) {
+        this.splice(i, 1);
+      }
+    }
+  };
+
+  let arr = [1, 2, 3, 4, 5];
+  arr.removeWant(4);
+
+  console.log(arr); //[1,2]
+</script>

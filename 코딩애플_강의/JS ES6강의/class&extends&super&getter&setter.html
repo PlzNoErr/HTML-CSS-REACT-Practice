@@ -1,0 +1,104 @@
+<script>
+  // 문제 1, class를 사용해서 인스턴스를 찍어내 보자!
+  class 동물 {
+    constructor(type, color) {
+      this.type = type;
+      this.color = color;
+    }
+    addAge() {
+      if (this.age) this.age++;
+      else console.log("이 친구는 나이 state가 존재하지 않는데유...");
+    }
+  }
+
+  let 강아지1 = new 동물("말티즈", "white");
+  let 강아지2 = new 동물("진돗개", "brown");
+
+  console.log(강아지1);
+  console.log(강아지2);
+
+  // 문제 2, 고양이는 동물을 상속해서 몇가지 특성을 추가하고 싶다!! 방법은?
+  class 고양이 extends 동물 {
+    constructor(type, color, age) {
+      super(type, color);
+      this.age = age;
+    }
+  }
+
+  let 고양이1 = new 고양이("코숏", "white", 3);
+  let 고양이2 = new 고양이("샴", "brown", 11);
+  console.log(고양이1);
+  console.log(고양이2);
+
+  //문제 3, 아무튼 prototype 함수를 사용해서 애러처리 해보기
+  강아지1.addAge();
+  고양이1.addAge();
+  console.log(고양이1);
+
+  //문제 4, get/set을 활용해보자
+
+  // 자바스크립트로 간단한 게임 기능을 가진 오브젝트를 뽑는 class를 만들고 싶습니다.
+
+  // 다음 조건에 따라 class를 만들어보세요. class 이름은 Unit이라고 합시다.
+
+  // (1) 모든 Unit의 인스턴스는 공격력, 체력 속성이 있으며 기본 공격력은 5, 기본 체력은 100으로 설정되어 있어야 합니다.
+
+  // (2) 모든 Unit의 인스턴스는 전투력을 측정해주는 battlePoint라는 getter가 있습니다.
+
+  // console.log( 인스턴스.battlePoint ) 이렇게 사용하면 현재 공격력과 체력을 더한 값을 콘솔창에 출력해주어야합니다.
+
+  // (3) 모든 Unit의 인스턴스는 heal이라는 setter가 있습니다.
+
+  // 인스턴스.heal = 50 이렇게 사용하면 체력 속성이 50 증가해야합니다.
+
+  class Unit {
+    constructor(health = 100, attack = 5) {
+      this.health = health;
+      this.attack = attack;
+    }
+    get battlePoint() {
+      return this.health + this.attack;
+    }
+    set heal(num) {
+      this.health += num;
+    }
+  }
+
+  let player1 = new Unit();
+  let player2 = new Unit(30, 5);
+  console.log(player1.battlePoint);
+  console.log(player2.battlePoint);
+  player1.heal = 30;
+  player2.heal = 300;
+  console.log(player1);
+  console.log(player2);
+  // 거슬린다.. 자바의 영혼이 불편하다고 외치고 있다!!!! ()를 돌려줘!!!
+
+  // 문제 5
+
+  // (1) data 오브젝트안에 setter 역할 함수를 하나 만들어보십시오.
+
+  // setter 함수에 1,2,3,4 이렇게 아무 자연수나 파라미터로 입력하면 홀수는 odd, 짝수는 even 이라는 속성에 array 형태로 저장되어야합니다.
+
+  // (2) data 오브젝트안에 getter 역할 함수를 하나 만들어보십시오.
+
+  // getter 함수를 사용하면 odd, even에 저장된 모든 데이터들이 숫자순으로 정렬되어 출력되어야합니다.
+
+  let data = {
+    odd: [],
+    even: [],
+    setData(...params) {
+      params.forEach((el) => {
+        if (el % 2 === 0) this.even.push(el);
+        else this.odd.push(el);
+      });
+    },
+    getData() {
+      return [...this.odd, ...this.even].sort((n1, n2) => n1 - n2);
+    },
+  };
+  data.setData(1, 5, 9, 11, 20, 32, 78, 43);
+  console.log(data.odd);
+  console.log(data.even);
+  console.log(data.getData());
+</script>
