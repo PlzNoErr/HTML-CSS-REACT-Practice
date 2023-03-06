@@ -6,8 +6,8 @@ let 복잡한변수: Alias;
 // readonly를 사용해 읽기전용 상태로 바꿔줌.
 // 이렇게 설정되면 해당 객채안의 속성들도 잠가 버릴 수 있음.
 // 단 그냥 애러만 띄워 주는 것 뿐, 실제로 js에서는 전환도 하고 실행도 잘 됨
-type Person = { readonly name: string };
-const person: Person = { name: "이름" };
+type Persons = { readonly name: string };
+const person: Persons = { name: "이름" };
 
 // type 끼리도 Union Type으로 만드는 것이 가능하다.
 type Name = string;
