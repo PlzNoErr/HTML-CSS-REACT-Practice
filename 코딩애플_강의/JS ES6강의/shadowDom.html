@@ -1,0 +1,10 @@
+<input type="range" />
+<body>
+  <div id="mordor"></div>
+  <script>
+    document.querySelector("#mordor").attachShadow({ mode: "open" });
+    document.querySelector(
+      "#mordor"
+    ).shadowRoot.innerHTML = `<p>심연에 숨어있도다</p>`;
+  </script>
+</body>

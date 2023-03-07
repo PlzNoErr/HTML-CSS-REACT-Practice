@@ -1,0 +1,41 @@
+<script>
+  // 전통적인 Object에는 key에 string과 Symbol만 가능
+  // 하지만 Map에는 key값의 제한이 없다.
+
+  // 한번에 여러게 map에 집어넣기
+  let map = new Map([
+    ["dragon", "fly"],
+    ["kk", "dd"],
+  ]);
+
+  map.set("name", "kim");
+  map.set(12, 13);
+  map.set({ tiger: "kuang" }, 123);
+
+  console.log(map);
+  console.log(map.get("name"));
+  console.log(map.size);
+  for (let el of map) {
+    console.log("나와라 map 원소!");
+    console.log(el);
+  }
+  for (let el of map.keys()) {
+    console.log("나와라 map key값!");
+    console.log(el);
+  }
+
+  // Set이 뭔지는 다들 아시죠?
+  // 마찬가지로 Set에 여러개 한번에 넣기
+  let set = new Set([1, 2, 3, 4, 5]);
+  set.add(6);
+  console.log(set);
+  console.log(set.size);
+
+  // Array <=> Set
+  let arr = [1, 2, 3, 4, 5, 5, 5, 5, 5, 5, 5];
+  let newSet = new Set(arr);
+  arr = [...newSet];
+
+  // 아주 간편하게 Array안의 중복을 털어버린다
+  console.log(arr);
+</script>
