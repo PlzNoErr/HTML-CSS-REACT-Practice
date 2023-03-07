@@ -1,0 +1,38 @@
+<script>
+  //오브젝트.value === 오브젝트["value"]
+  let test = { name: "kim", age: 30, uni: "KH" };
+
+  for (let key in test) console.log(test[key]);
+
+  let 데이터 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  for (let num1 of 데이터) {
+    for (let num2 of 데이터) {
+      console.log(num1 + " x " + num2 + " = " + num1 * num2);
+    }
+  }
+
+  var products = [
+    {
+      name1: "chair",
+      price1: 7000,
+    },
+    {
+      name2: "sofa",
+      price: 5000,
+    },
+    {
+      name1: "desk",
+      price3: 9000,
+    },
+  ];
+
+  for (let data of products) {
+    for (let el in data) {
+      value = data[el];
+      let temp = el.replace(/[(1-9)]/g, "");
+      data[temp] = value;
+      if (el !== temp) delete data[el];
+    }
+  }
+  console.log(products);
+</script>
