@@ -1,0 +1,23 @@
+<script>
+  // 너무 당연하지만 설명이 같아도 둘은 다른 객체임.
+  let weight = Symbol("나의 시크릿 값");
+  let height = Symbol("나의 시크릿 값");
+
+  // 하지만 for을 사용해서 "전역 Symbol"로 만들면 설명이 같으면 같은 객채가 됨.
+  // a === b 임
+  let a = Symbol.for("설명");
+  let b = Symbol.for("설명");
+
+  let person = { name: "Kim", [weight]: 200 };
+  person.weight = 100;
+  person[height] = 160; // 반복문에서 출력이 안됨
+
+  for (let key in person) {
+    console.log(person[key]);
+  }
+
+  // 오브젝트안에 주석을 담기 + enumerable X 하게 설정되서 반복문에서 출력이 안됨.
+  // 덕분에 import 해온 라이브러리를 활용할때 반복문에 안잡히므로 객채에 새로운 데이터를 집어넣을 때 종종 씀.
+  // 직접 지목하면 출력 잘됨.
+  console.log(person[height]);
+</script>

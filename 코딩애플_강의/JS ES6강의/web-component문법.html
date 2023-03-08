@@ -1,0 +1,43 @@
+<body>
+  <custom-input
+    name="이야 이게 되네? 실화냐?"
+    dragon="용가리 넣어도 되냐?"
+  ></custom-input>
+  <template id="템플릿1">
+    <p>여기 있는 놈들은 랜더링 안됨. 아래 탬플릿에 뿅 집어넣기 위해 사용함</p>
+  </template>
+  <br />
+  <label>너는 영향을 받니? shadowDom 안에 들어가면 영향을 안주네?</label>
+  <script>
+    // Web Cmponents => JS문법으로 구현 가능한 브라우저의 기본 기능
+    // 리엑트나 뷰의 작동 근본들임.
+
+    class 클래스1 extends HTMLElement {
+      connectedCallback() {
+        let name = this.getAttribute("name");
+        let dragon = this.getAttribute("dragon");
+
+        this.attachShadow({ mode: "open" });
+        this.shadowRoot.innerHTML = `<label>${name} 인풋이에요 ${dragon}</label><input>
+        <style>label {color : red};</style>`;
+
+        this.shadowRoot.append(템플릿1.content.cloneNode(true));
+
+        let el = this.shadowRoot.querySelector("label");
+        el.addEventListener("click", () => console.log("눌렀다"));
+      }
+
+      static get observedAttributes() {
+        return ["name"];
+      }
+
+      attributeChangedCallback() {
+        console.log(this.getAttribute("name"));
+        // html 리렌더링
+        this.innerHTML = `<label>나는 리렌더링된 친구다!!</label><input>`;
+      }
+    }
+
+    customElements.define("custom-input", 클래스1);
+  </script>
+</body>
