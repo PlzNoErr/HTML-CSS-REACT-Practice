@@ -12,21 +12,22 @@ var 사람1 = new Person("누누", 12);
 var 사람2 = new Person("리신", 42);
 사람1.setName("호랑이");
 console.log(사람1);
+1;
 console.log(사람2);
 // 문제1
-var Car = /** @class */ (function () {
-    function Car(type, price) {
-        this.carType = type;
-        this.carPrice = price;
+var CarTT = /** @class */ (function () {
+    function CarTT(type, price) {
+        this.CarTTType = type;
+        this.CarTTPrice = price;
     }
-    Car.prototype.tax = function () {
-        return this.carPrice / 10;
+    CarTT.prototype.tax = function () {
+        return this.CarTTPrice / 10;
     };
-    return Car;
+    return CarTT;
 }());
-var car1 = new Car("소나타", 3000);
-console.log(car1);
-console.log(car1.tax());
+var CarTT1 = new CarTT("소나타", 3000);
+console.log(CarTT1);
+console.log(CarTT1.tax());
 // 문제2
 var Word = /** @class */ (function () {
     function Word() {
