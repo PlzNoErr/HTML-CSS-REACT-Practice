@@ -1,0 +1,13 @@
+<script>
+  let user = { name: "kim", age: 12 };
+  // 이거는 애러가 안난다!
+  console.log(user.dragon?.value);
+
+  // 이거는 애러가 난다!
+  // console.log(user.dragon.value);
+
+  // optional chaining => 왼쪽이 null or undefined면 그냥 거기서 연산을 멈춤
+
+  // 왼쪽의 변수가 undefined or null 이라면 오른쪽을 보여줘라
+  console.log(undefined ?? "그렇다면 나를 출력");
+</script>
